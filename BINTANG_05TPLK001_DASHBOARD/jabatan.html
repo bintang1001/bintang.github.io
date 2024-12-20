@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            min-height: 100vh;
+            background-color: #fd7e14;
+            color: #fff;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .header {
+            background-color: #fd7e14;
+            color: #fff;
+            padding: 15px;
+        }
+        .card {
+            margin: 15px;
+        }
+        .sidebar img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .text-center-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-item-icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <div class="sidebar-sticky">
+                <div class="text-center text-center-logo">
+                    <img src="C:\BINTANG_05TPLK001/UNPAM_logo.png" alt="Logo Universitas Pamulang">
+                    <h4>Universitas Pamulang Student</h4>
+                </div>
+                <p class="text-center">BINTANG<br> <small>Administrator</small></p>
+                <a href="Dashboar.html"><i class="fas fa-tachometer-alt menu-item-icon"></i> Dashboard</a>
+                <h6 class="mt-4">MENU KARYAWAN</h6>
+                <a href="Karyawan.html"><i class="fas fa-user menu-item-icon"></i> Karyawan</a>
+                <a href="Jabatan.html"><i class="fas fa-briefcase menu-item-icon"></i> Jabatan</a>
+                <a href="Divisi.html"><i class="fas fa-sitemap menu-item-icon"></i> Divisi</a>
+
+                <h6 class="mt-4">MENU ABSENSI</h6>
+                <a href="Absensi.html"><i class="fas fa-calendar-check menu-item-icon"></i> Absensi</a>
+                <a href="Izin.html"><i class="fas fa-file-alt menu-item-icon"></i> Izin</a>
+                <a href="Lembur.html"><i class="fas fa-clock menu-item-icon"></i> Lembur</a>
+
+                <h6 class="mt-4">MENU PENGGAJIAN</h6>
+                <a href="Slip Gaji.html"><i class="fas fa-file-invoice-dollar menu-item-icon"></i> Slip Gaji</a>
+                <a href="Cetak Slip Gaji.html"><i class="fas fa-print menu-item-icon"></i> Cetak Slip Gaji</a>
+
+                <h6 class="mt-4">MENU LAPORAN</h6>
+                <a href="Cetak Laporan.html"><i class="fas fa-file-pdf menu-item-icon"></i> Cetak Laporan</a>
+
+                <h6 class="mt-4">MENU ADMIN</h6>
+                <a href="Pengguna.html"><i class="fas fa-user-cog menu-item-icon"></i> Pengguna</a>
+
+                <!-- Logout Button -->
+                <div class="text-center mt-4">
+                    <a href="logout.html" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Main Content -->
+        <main class="col-md-10 ml-sm-auto col-lg-10 px-4">
+            <div class="header">
+                <h2>Sistem Informasi Manajemen Karyawan</h2>
+                <h5>Admin Dashboard</h5>
+            </div>
+
+            <div class="table-responsive bg-light p-2">
+                    <h4>Data Jabatan</h4>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>No</th>
+                                <th>Kode Jabatan</th>
+                                <th>Jabatan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>KJ001</td>
+                                <td>Manager</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>2</td>
+                                <td>KJ002</td>
+                                <td>Accounting</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>KJ003</td>
+                                <td>HRD</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>KJ004</td>
+                                <td>Admin</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>KJ005</td>
+                                <td>Staff</td>
+                                <td>
+                                  <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

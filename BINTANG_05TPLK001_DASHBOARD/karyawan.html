@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            min-height: 100vh;
+            background-color: #fd7e14;
+            color: #fff;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .header {
+            background-color: #fd7e14;
+            color: #fff;
+            padding: 15px;
+        }
+        .card {
+            margin: 15px;
+        }
+        .sidebar img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .text-center-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-item-icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <div class="sidebar-sticky">
+                <div class="text-center text-center-logo">
+                    <img src="C:\BINTANG_05TPLK001/UNPAM_logo.png" alt="Logo Universitas Pamulang">
+                    <h4>Universitas Pamulang Student</h4>
+                </div>
+                <p class="text-center">BINTANG<br> <small>Administrator</small></p>
+                <a href="Dashboar.html"><i class="fas fa-tachometer-alt menu-item-icon"></i> Dashboard</a>
+                <h6 class="mt-4">MENU KARYAWAN</h6>
+                <a href="Karyawan.html"><i class="fas fa-user menu-item-icon"></i> Karyawan</a>
+                <a href="Jabatan.html"><i class="fas fa-briefcase menu-item-icon"></i> Jabatan</a>
+                <a href="Divisi.html"><i class="fas fa-sitemap menu-item-icon"></i> Divisi</a>
+
+                <h6 class="mt-4">MENU ABSENSI</h6>
+                <a href="Absensi.html"><i class="fas fa-calendar-check menu-item-icon"></i> Absensi</a>
+                <a href="Izin.html"><i class="fas fa-file-alt menu-item-icon"></i> Izin</a>
+                <a href="Lembur.html"><i class="fas fa-clock menu-item-icon"></i> Lembur</a>
+
+                <h6 class="mt-4">MENU PENGGAJIAN</h6>
+                <a href="Slip Gaji.html"><i class="fas fa-file-invoice-dollar menu-item-icon"></i> Slip Gaji</a>
+                <a href="Cetak Slip Gaji.html"><i class="fas fa-print menu-item-icon"></i> Cetak Slip Gaji</a>
+
+                <h6 class="mt-4">MENU LAPORAN</h6>
+                <a href="Cetak Laporan.html"><i class="fas fa-file-pdf menu-item-icon"></i> Cetak Laporan</a>
+
+                <h6 class="mt-4">MENU ADMIN</h6>
+                <a href="Pengguna.html"><i class="fas fa-user-cog menu-item-icon"></i> Pengguna</a>
+
+                <!-- Logout Button -->
+                <div class="text-center mt-4">
+                    <a href="logout.html" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-10 ml-sm-auto col-lg-10 px-4">
+            <div class="header">
+                <h2>Sistem Informasi Manajemen Karyawan</h2>
+                <h5>Admin Dashboard</h5>
+            </div>
+            
+               <div class="table-responsive bg-light p-2">
+                    <h4>Data Karyawan</h4>
+                    <button id="addEmployeeBtn" class="btn btn-primary float-right mb-3">+ Tambah Karyawan</button>
+                    <div class="form-container bg-light p-3 border rounded">
+                        <h5>Form Tambah Karyawan</h5>
+                        <form id="employeeForm">
+                            <div class="form-group">
+                                <label for="fullName">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Jenis Kelamin</label>
+                                <select class="form-control" id="gender" required>
+                                    <option value="">Pilih...</option>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">No. HP</label>
+                                <input type="text" class="form-control" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Alamat</label>
+                                <input type="text" class="form-control" id="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Jabatan</label>
+                                <select class="form-control" id="position" required>
+                                    <option value="">Pilih Jabatan...</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="HRD">HRD</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Staff">Staff</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="division">Divisi</label>
+                                <select class="form-control" id="division" required>
+                                    <option value="">Pilih Divisi...</option>
+                                    <option value="IT">IT</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Operations">Operations</option>
+                                </select>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-success">Simpan</button>
+                                <button type="button" id="cancelBtn" class="btn btn-secondary">Batal</button>
+                            </div>
+                        </form>
+                    </div>
+                    <table class="table table-bordered mt-3">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>No</th>
+                                <th>Kode</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Alamat</th>
+                                <th>Jabatan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>K001</td>
+                                <td>Melisa</td>
+                                <td>melisa123@gmail.com</td>
+                                <td>Bogor</td>
+                                <td>Manager</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>K002</td>
+                                <td>Bintang</td>
+                                <td>star@gmail.com</td>
+                                <td>Tangerang</td>
+                                <td>Accounting</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>K003</td>
+                                <td>Irfan</td>
+                                <td>Irfan@gmail.com</td>
+                                <td>Bali</td>
+                                <td>HRD</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>K004</td>
+                                <td>Azay</td>
+                                <td>Azay@gmail.com</td>
+                                <td>Depok</td>
+                                <td>Admin</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>K005</td>
+                                <td>Rendy Saputra</td>
+                                <td>rendi@gmail.com</td>
+                                <td>Bandung</td>
+                                <td>Staff</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle form visibility
+        $('#addEmployeeBtn').click(function() {
+            $('.form-container').toggle();
+        });
+
+        // Handle form submission (for demonstration purposes)
+        $('#employeeForm').submit(function(e) {
+            e.preventDefault(); // Prevent actual form submission
+
+            // Here you would normally process the form data, e.g., send it to a server
+            alert('Karyawan berhasil ditambahkan!');
+
+            // Clear form fields
+            $(this).trigger("reset");
+            $('.form-container').hide(); // Hide form after submission
+        });
+
+        // Handle cancel button click
+        $('#cancelBtn').click(function() {
+            $('.form-container').hide(); // Hide the form
+            $('#employeeForm').trigger("reset"); // Reset form fields
+        });
+    </script>
+</body>
+</html>
